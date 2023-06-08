@@ -1,0 +1,1003 @@
+/*Main Variables*/
+$main_color: white;
+$main-color2: #20A8E9;
+$title_font: Georgia;
+$main_font: Helvetica;
+$hover_color: #fccb06;
+
+body {
+    margin: 0px;
+}
+
+/*Media Query for screen width less than 480 pixels (Phones)*/
+@media (max-width: 480px) {
+    .container { /*Styling nav bar container*/
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menuLogo { /*Styling church logo*/
+        width: auto;
+        height: auto;
+        max-width: 35px;
+        max-height: 35px;
+        position: absolute;
+        margin: 5px;
+    }
+
+
+    /*Styling the menu bars*/
+    #menuBars {
+        margin: auto 0;
+        cursor: pointer;
+        background-color: black;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        padding-right: 3%;
+    }
+
+    /*Creating the bars for the menu button*/
+    #menuBars div {
+        width: 35px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /*Animates the bars of the menu button*/
+    .open .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+
+    .open .bar2 {
+        opacity: 0;
+    }
+
+    .open .bar3 {
+        -webkit-transform: rotate(45deg) translate(-6px, -8px);
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    /*Opens the menu bar for mobile*/
+    .open .mobileMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /*Menu bar for mobile*/
+    .mobileMenu {
+        display: none;
+        position: absolute;
+        top: 25px;
+        right: 0px;
+        height: auto;
+        width: auto;
+        list-style-type: none;
+        background-color: #000000;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        padding: 5%;
+        z-index: 9;
+    }
+
+    .mobileMenu li {
+        margin-bottom: 15%;
+        font-family: $main_font;
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+
+    h2 { /*Styling church name*/
+        text-decoration: none;
+        font-family: $title_font;
+        font-size: 20px;
+        color: $main_color;
+        position: absolute;
+        margin: 12px;
+        padding-left: 35px;
+    }
+
+    .desktopNav { /*styling nav bar*/
+        list-style-type: none;
+        background-color: #000000;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        font-family: $main_font;
+        font-size: 14px;
+        width: 100%;
+        height: 50px;
+        margin: 0px;
+        padding-left: 30%;
+        text-align: center;
+    }
+
+    /*styling nav bar contents*/
+    .desktopMenu {
+        display: none;
+    }
+
+    .menuContent {
+        color: $main_color;
+        text-decoration: none;
+    }
+
+    /*styling live stream link*/
+    h3 {
+        display: none;
+    }
+
+    .content2 {
+        display: none;
+    }
+
+    /*styling languages link*/
+    .langIcon { /*styling languages icon*/
+        display: none;
+    }
+
+    .content3 {
+        display: none;
+    }
+
+    /*styling links*/
+    .link {
+        text-decoration: none;
+        color: $main_color;
+    }
+        /*Container for CG Image*/
+        .imgContainer {
+            display: flex;
+        }
+        /*Connect Group Image*/
+        .cgImg {
+            height: auto;
+            width: auto;
+            max-width: 550px;
+            max-height: 550px;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        /*Image color overlay*/
+        .imgOverlay {
+            background: #171717;
+            overflow: hidden;
+
+        }
+        /*Connect Group Title*/
+        .cgTitle {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $main_color;
+            font-family: $title_font;
+            font-weight: 800;
+            font-size: 2.5em;
+        }
+        /*Paragraph*/
+        .subtitle {
+            color: $main_color;
+            font-size: 15px;
+            top: 32%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: $main_font;
+            position: absolute;
+        }
+        /*Join a CG button*/
+        .cgBtn {
+            font-family: $main_font;
+            font-weight: 600;
+            font-size: 10px;
+            border: 2px solid white;
+            color: $main_color;
+            background: none;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 25px;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        /*button on hover*/
+        button:hover {
+            background-color: $main-color2;
+            color: white;
+        }
+        /*Container for Popup form*/
+    .cgPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        background-color: #999999;
+    }
+        /*Styling the popup form*/
+        .formPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, 5%);
+            border: 3px solid #999999;
+            z-index: 9;
+        }
+        /*Form container*/
+        .formCon {
+            max-width: 1500px;
+            padding: 20px;
+            background-color: #fff;
+            font-family: $main_font;
+            font-size: 1em;
+        }
+        /*Styling the form inputs*/
+        .formCon input[type=text],
+        .formCon input[type=password] {
+            width: 90%;
+            padding: 15px;
+            margin: 5px 0 20px 0;
+            border: none;
+            background: #eee;
+        }
+
+        .formCon input[type-text]:focus,
+        .formCon input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        /*Styling the button to open form*/
+        .formCon .btn {
+            padding: 12px 20px;
+            border: none;
+            background-color: #8ebf42;
+            color: #fff;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        /*Styling the submit and cancel button*/
+        .formCon .cancel {
+            background-color: #cc0000;
+        }
+
+        .submitBtn { /*Submit button*/
+            width: 60%;
+            height: 60px;
+            background-color: $main-color2;
+            color: $main_color;
+        }
+
+        .submitBtn:hover {
+            background-color: steelblue;
+        }
+
+        .btnCancel { /*Cancel button*/
+            width: 40%;
+            height: 30px;
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+            margin: 2%;
+        }
+        hr { /*divider*/
+        margin-top: 4%;
+        border: .5px solid $main-color2;
+    }
+        /*Styling the footer*/
+        footer {
+            justify-content: space-around;
+            background-color: #454545;
+        }
+        /*Styling the Social Media Title*/
+        .socialMedia {
+            font-family: $main_font;
+            color: $main_color;
+            text-align: center;
+        }
+        /*Styling the footer container*/
+        .container6 {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin: 5%;
+        }
+        /*Styling the FB Icon*/
+        .fbIcon {
+            width: auto;
+            height: auto;
+            max-width: 25px;
+            max-height: 25px;
+            grid-row: 1;
+            grid-column: 1;
+            padding: 3px;
+        }
+        /*Styling the IG Icon*/
+        .igIcon {
+            width: auto;
+            height: auto;
+            max-width: 25px;
+            max-height: 25px;
+            grid-row: 1;
+            grid-column: 2;
+            padding: 3px;
+        }
+        /*Styling the Twitter Icon*/
+        .twIcon {
+            width: auto;
+            height: auto;
+            max-width: 25px;
+            max-height: 25px;
+            grid-row: 1;
+            grid-column: 3;
+            padding: 3px;
+        }
+        /*Styling the IG Icon*/
+        .ytIcon {
+            width: auto;
+            height: auto;
+            max-width: 25px;
+            max-height: 25px;
+            grid-row: 1;
+            grid-column: 4;
+            padding: 3px;
+        }
+        /*Styling the Social Media Icons Container*/
+        .sm_Icons {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            justify-content: space-around;
+        }
+        /*Styling the other footer details*/
+        .footer_details {
+            font-family: $main_font;
+            color: $main_color;
+            text-align: center;
+        }
+    }
+
+/*Media Query for screen width upto 800 pixels (Tablet)*/
+@media (min-width: 480px) and (max-width: 800px) {
+    .container { /*Styling nav bar container*/
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menuLogo { /*Styling church logo*/
+        width: auto;
+        height: auto;
+        max-width: 50px;
+        max-height: 50px;
+        position: absolute;
+        margin: 5px;
+    }
+
+    h2 { /*Styling church name*/
+        text-decoration: none;
+        font-family: $title_font;
+        font-size: 15px;
+        color: $main_color;
+        position: absolute;
+        margin: 20px;
+        padding-left: 45px;
+    }
+
+    ul { /*styling nav bar*/
+        list-style-type: none;
+        background-color: #000000;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        font-family: $main_font;
+        font-size: 14px;
+        width: 100%;
+        height: 70px;
+        margin: 0px;
+        padding-left: 30%;
+        text-align: center;
+    }
+
+    /*styling nav bar contents*/
+    li {
+        display: none;
+    }
+
+    .menuContent {
+        color: $main_color;
+        text-decoration: none;
+    }
+
+    /*styling live stream link*/
+    h3 {
+        position: absolute;
+        float: right;
+        font-family: $title_font;
+        font-size: 15px;
+        margin: 20px;
+    }
+
+    .content2 {
+        padding-left: 74%;
+    }
+
+    /*styling languages link*/
+    .langIcon { /*styling languages icon*/
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        position: absolute;
+        margin: 15px;
+        padding-left: 81%;
+    }
+
+    .content3 {
+        padding-left: 85%;
+        text-decoration: none;
+        color: $main_color;
+    }
+
+    /*styling links*/
+    .link {
+        text-decoration: none;
+        color: $main_color;
+    }
+
+    /*Container for CG Image*/
+    .imgContainer {
+        display: flex;
+    }
+    /*Connect Group Image*/
+    .cgImg {
+        height: auto;
+        width: auto;
+        max-width: 850px;
+        max-height: 850px;
+        object-fit: cover;
+        opacity: 0.4;
+    }
+    /*Image color overlay*/
+    .imgOverlay {
+        background: #171717;
+        overflow: hidden;
+    }
+    /*Connect Group Title*/
+    .cgTitle {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $main_color;
+        font-family: $title_font;
+        font-weight: 800;
+        font-size: 3em;
+    }
+    /*Paragraph*/
+    .subtitle {
+        color: $main_color;
+        font-size: 15px;
+        top: 45%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        font-family: $main_font;
+        position: absolute;
+    }
+    /*Join a CG button*/
+    .cgBtn {
+        font-family: $main_font;
+        font-weight: 600;
+        font-size: 10px;
+        border: 2px solid white;
+        color: $main_color;
+        background: none;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px 25px;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+    /*button on hover*/
+    button:hover {
+        background-color: $main-color2;
+        color: white;
+    }
+    /*Container for Popup form*/
+    .cgPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        background-color: #999999;
+    }
+    /*Styling the popup form*/
+    .formPopup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+    }
+    /*Form container*/
+    .formCon {
+        max-width: 1500px;
+        padding: 20px;
+        background-color: #fff;
+        font-family: $main_font;
+        font-size: 1em;
+    }
+    /*Styling the form inputs*/
+    .formCon input[type=text],
+    .formCon input[type=password] {
+        width: 90%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+    }
+
+    .formCon input[type-text]:focus,
+    .formCon input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /*Styling the button to open form*/
+    .formCon .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+    /*Styling the submit and cancel button*/
+    .formCon .cancel {
+        background-color: #cc0000;
+    }
+
+    .submitBtn { /*Submit button*/
+        width: 60%;
+        height: 60px;
+        background-color: $main-color2;
+        color: $main_color;
+    }
+
+    .submitBtn:hover {
+        background-color: steelblue;
+    }
+
+    .btnCancel { /*Cancel button*/
+        width: 40%;
+        height: 30px;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+        margin: 2%;
+    }
+
+
+    hr { /*divider*/
+        margin-top: 5%;
+        border: .5px solid $main-color2;
+    }
+
+    /*Styling the footer*/
+    footer {
+        display: flex;
+        justify-content: space-between;
+        background-color: #454545;
+        flex-direction: column;
+    }
+
+    /*Styling the Social Media Title*/
+    .socialMedia {
+        font-family: $main_font;
+        color: $main_color;
+        font-size: 12px;
+    }
+
+    /*Styling the footer container*/
+    .container6 {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-top: 0px;
+    }
+
+    /*Styling the FB Icon*/
+    .fbIcon {
+        width: auto;
+        height: auto;
+        max-width: 25px;
+        max-height: 25px;
+        grid-row: 1;
+        grid-column: 1;
+        padding: 3px;
+    }
+
+    /*Styling the IG Icon*/
+    .igIcon {
+        width: auto;
+        height: auto;
+        max-width: 25px;
+        max-height: 25px;
+        grid-row: 1;
+        grid-column: 2;
+        padding: 3px;
+    }
+
+    /*Styling the Twitter Icon*/
+    .twIcon {
+        width: auto;
+        height: auto;
+        max-width: 25px;
+        max-height: 25px;
+        grid-row: 2;
+        grid-column: 1;
+        padding: 3px;
+    }
+
+    /*Styling the IG Icon*/
+    .ytIcon {
+        width: auto;
+        height: auto;
+        max-width: 25px;
+        max-height: 25px;
+        grid-row: 2;
+        grid-column: 2;
+        padding: 3px;
+    }
+
+    /*Styling the Social Media Icons Container*/
+    .sm_Icons {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*Styling the other footer details*/
+    .footer_details {
+        font-family: $main_font;
+        color: $main_color;
+        font-size: 12px;
+    }
+}
+
+/*Media Query for screen width of 1024 pixels and up (Laptop)*/
+@media (min-width: 800px) {
+    .container { /*Styling nav bar container*/
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menuLogo { /*Styling church logo*/
+        width: auto;
+        height: auto;
+        max-width: 50px;
+        max-height: 50px;
+        position: absolute;
+        margin: 5px;
+    }
+
+    h2 { /*Styling church name*/
+        text-decoration: none;
+        font-family: $title_font;
+        font-size: 15px;
+        color: $main_color;
+        position: absolute;
+        margin: 20px;
+        padding-left: 45px;
+    }
+
+    ul { /*styling nav bar*/
+        list-style-type: none;
+        background-color: #000000;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        font-family: $main_font;
+        font-size: 14px;
+        width: 100%;
+        height: 40px;
+        margin: 0px;
+        padding-left: 30%;
+        text-align: center;
+        padding-top: 3%;
+    }
+
+    /*styling nav bar contents*/
+    li {
+        float: left;
+    }
+
+    .menuContent {
+        color: $main_color;
+        text-decoration: none;
+        margin: 20px;
+    }
+
+    .menuContent:hover {
+        color: #fccb06;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+
+
+    /*styling live stream link*/
+    h3 {
+        position: absolute;
+        float: right;
+        font-family: $title_font;
+        font-size: 15px;
+        margin: 20px;
+    }
+
+    .content2 {
+        padding-left: 83%;
+    }
+
+    /*styling languages link*/
+    .langIcon { /*styling languages icon*/
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        position: absolute;
+        margin: 15px;
+        padding-left: 87.5%;
+    }
+
+    .content3 {
+        padding-left: 90%;
+        text-decoration: none;
+        color: $main_color;
+    }
+
+    /*styling links*/
+    .link {
+        text-decoration: none;
+        color: $main_color;
+    }
+
+    .content2:hover {
+        color: #fccb06;
+    }
+
+    .link:hover {
+        color: #fccb06;
+    }
+
+    /*Container for CG Image*/
+    .imgContainer {
+        display: flex;
+    }
+
+    /*Connect Group Image*/
+    .cgImg {
+        height: auto;
+        width: auto;
+        max-width: 1550px;
+        max-height: 1550px;
+        object-fit: cover;
+        opacity: 0.4;
+    }
+
+    /*Image color overlay*/
+    .imgOverlay {
+        background: #171717;
+        overflow: hidden;
+    }
+
+    /*Connect Group Title*/
+    .cgTitle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $main_color;
+        font-family: $title_font;
+        font-weight: 800;
+        font-size: 5.5em;
+    }
+
+    /*Paragraph*/
+    .subtitle {
+        color: $main_color;
+        font-size: 1.5em;
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $main_font;
+        position: absolute;
+    }
+
+    /*Join a CG button*/
+    .cgBtn {
+        font-family: $main_font;
+        font-weight: 600;
+        font-size: 2em;
+        border: 2px solid white;
+        color: $main_color;
+        background: none;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px 25px;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+
+    /*button on hover*/
+    button:hover {
+        background-color: $main-color2;
+        color: white;
+    }
+
+    /*Container for Popup form*/
+    .cgPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        background-color: #999999;
+    }
+
+    /*Styling the popup form*/
+    .formPopup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+    }
+
+    /*Form container*/
+    .formCon {
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        font-family: $main_font;
+        font-size: 1em;
+    }
+
+    /*Styling the form inputs*/
+    .formCon input[type=text],
+    .formCon input[type=password] {
+        width: 90%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+    }
+
+    .formCon input[type-text]:focus,
+    .formCon input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /*Styling the button to open form*/
+    .formCon .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    /*Styling the submit and cancel button*/
+    .formCon .cancel {
+        background-color: #cc0000;
+    }
+
+    .submitBtn { /*Submit button*/
+        width: 60%;
+        height: 60px;
+        background-color: $main-color2;
+        color: $main_color;
+    }
+
+    .submitBtn:hover {
+        background-color: steelblue;
+    }
+
+    .btnCancel { /*Cancel button*/
+        width: 20%;
+        height: 30px;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+        margin: 2%;
+    }
+
+    /*Styling the footer*/
+    footer {
+        display: flex;
+        justify-content: space-between;
+        background-color: #454545;
+        flex-direction: column;
+    }
+
+    /*Styling the Social Media Title*/
+    .socialMedia {
+        font-family: $main_font;
+        color: $main_color;
+    }
+
+    /*Styling the footer container*/
+    .container6 {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-top: 0px;
+    }
+
+    /*Styling the FB Icon*/
+    .fbIcon {
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        grid-row: 1;
+        grid-column: 1;
+        padding: 3px;
+    }
+
+    /*Styling the IG Icon*/
+    .igIcon {
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        grid-row: 1;
+        grid-column: 2;
+        padding: 3px;
+    }
+
+    /*Styling the Twitter Icon*/
+    .twIcon {
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        grid-row: 2;
+        grid-column: 1;
+        padding: 3px;
+    }
+
+    /*Styling the IG Icon*/
+    .ytIcon {
+        width: auto;
+        height: auto;
+        max-width: 30px;
+        max-height: 30px;
+        grid-row: 2;
+        grid-column: 2;
+        padding: 3px;
+    }
+
+    /*Styling the Social Media Icons Container*/
+    .sm_Icons {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*Styling the other footer details*/
+    .footer_details {
+        font-family: $main_font;
+        color: $main_color;
+    }
+}
+
+
