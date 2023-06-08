@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LJOR UAE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="getConnected.css" />
+</head>
+<body>
+    <!--Container for Nav Bar-->
+    <div class="container">
+        <!--Logo and Name-->
+        <a href="HomePage.html"><img src="Logo/LJOR SEAL ALPHA-mac - Copy.gif" class="menuLogo" /></a>
+        <h2>Lord Jesus Our Redeemer</h2>
+
+        <!--Nav Bar-->
+        <ul class="desktopNav">
+            <li class="desktopMenu">
+                <!--Find a church navigation-->
+                <a href="#" class="menuContent">Find A Church</a>
+            </li>
+            <li class="desktopMenu">
+                <!--Connect Group navigation-->
+                <a href="#" class="menuContent">Get Connected</a>
+            </li>
+            <li class="desktopMenu">
+                <!--About us navigation-->
+                <a href="aboutUs.html" class="menuContent">About Us</a>
+            </li>
+            <li class="desktopMenu">
+                <!--Contact us navigation-->
+                <a href="#" class="menuContent">Contact Us</a>
+            </li>
+            <li class="desktopMenu">
+                <!--Prayer Request navigation-->
+                <a href="#" class="menuContent">Prayer Request</a>
+            </li>
+        </ul>
+        <!--Link to Live Streams-->
+        <h3 class="content2"><a href="#" class="link">Live</a></h3>
+        <!--Link to change language-->
+        <img src="Icons/pngwing.com.png" class="langIcon" />
+        <h3 class="content3"><a href="#" class="link">English</a></h3>
+
+        <!--Mobile Nav Bar-->
+        <div id="menuBars" onclick="toggleMobileMenu(this)">
+
+            <!--The bars for the menu button-->
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+
+            <ul class="mobileMenu">
+                <li>
+                    <!--Find a church navigation-->
+                    <a href="#" class="menuContent">Find A Church</a>
+                </li>
+                <li>
+                    <!--Connect Group navigation-->
+                    <a href="#" class="menuContent">Get Connected</a>
+                </li>
+                <li>
+                    <!--About us navigation-->
+                    <a href="#" class="menuContent">About Us</a>
+                </li>
+                <li>
+                    <!--Contact us navigation-->
+                    <a href="#" class="menuContent">Contact Us</a>
+                </li>
+                <li>
+                    <!--Prayer Request navigation-->
+                    <a href="#" class="menuContent">Prayer Request</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Container for Connect Group Image-->
+    <div class="imgContainer">
+
+        <!--Connect Group Image with color overlay-->
+        <div class="imgOverlay">
+            <img src="Images/IMG_9967.jpg" class="cgImg" />
+
+            <!--Join a Connect Group Button-->
+            <button type="button" class="cgBtn" onclick="openForm()"><strong>Join a Connect Group</strong></button>
+
+        </div>
+
+
+
+        <!--Connect Group Title & subtitle-->
+        <h1 class="cgTitle">Get Connected!</h1>
+        <p class="subtitle">Join a connect group and get connected with our community</p>
+
+
+
+    </div>
+
+    <!--Container for popup form-->
+    <div class="cgPopup">
+
+        <!--Popup form-->
+        <div class="formPopup" id="popupForm">
+            <form action="/action_page.php" class="formCon">
+
+                <!--Form labels-->
+                <label for="name">
+                    <!--Name-->
+                    <strong>Name</strong>
+                </label>
+                <input type="text" id="name" placeholder="Your name" name="name" required />
+                <br />
+
+                <label for="email">
+                    <!--Email-->
+                    <strong>E-mail</strong>
+                </label>
+                <input type="text" id="email" placeholder="Email" name=" email" required />
+
+                <label for="Emirate">
+                    <!--Emirate-->
+                    <strong>Emirate</strong>
+                </label>
+                <input type="text" id="emirate" placeholder="Emirate" name="emirate" required />
+
+                <label for="Area">
+                    <!--Area-->
+                    <strong>Area</strong>
+                </label>
+                <input type="text" id="area" placeholder="Area" name="area" required />
+
+                <!--Submit button-->
+                <button type="submit" class="submitBtn">Submit</button>
+
+                <br />
+                <!--Cancel button-->
+                <button type="button" class="btnCancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+        <br />
+        <!--divider-->
+        <hr style="border: 1px solid white; width: 90%; margin-bottom: 0px;" />
+        <br />
+
+        <!--container 6 for details-->
+        <div class="container6">
+            <!--social media icons container-->
+            <div class="socialMedia">
+                <h4>FOLLOW US</h4>
+
+                <div class="sm_Icons">
+                    <!--FB Icon-->
+                    <a href="https://www.facebook.com/ljorchurchuae" target="_blank">
+                        <img src="Icons/facebook.png" class="fbIcon" />
+                    </a>
+
+                    <!--IG Icon-->
+                    <a href="https://www.instagram.com/ljordubai/" target="_blank">
+                        <img src="Icons/instagram.png" class="igIcon" />
+                    </a>
+
+                    <!--Twitter Icon-->
+                    <a href="https://twitter.com/DubaiLjor" target="_blank">
+                        <img src="Icons/twitter.png" class="twIcon" />
+                    </a>
+
+                    <a href="https://www.youtube.com/@LJORUAE" target="_blank">
+                        <img src="Icons/youtube.png" class="ytIcon" /> <!--YT Icon-->
+                    </a>
+                </div>
+            </div>
+
+            <!--contact details-->
+            <div class="footer_details">
+                <h4>CONTACT US</h4>
+                <p>emailsample@gmail.com</p> <!--Email-->
+                <p>(971) 123 456 7890</p> <!--Phone Number-->
+            </div>
+
+            <!--Church branches-->
+            <div class="footer_details">
+                <h4>FIND A CHURCH</h4>
+                <p>Philippines</p> <!--PH Branch-->
+                <p>United Kingdom</p> <!--UK Branch-->
+                <p>UAE</p> <!--UAE Branch-->
+                <p>USA</p> <!--USA Branch-->
+            </div>
+
+            <!--Community details-->
+            <div class="footer_details">
+                <h4>GET CONNECTED</h4>
+                <p>Connect Group</p> <!--Conncect Groups-->
+                <p>Ministry</p> <!--Ministries-->
+                <p>Give</p> <!--Offertory-->
+                <p>Water Baptism</p> <!--Water Baptism-->
+            </div>
+
+            <!--About Us details-->
+            <div class="footer_details">
+                <h4>ABOUT US</h4>
+                <p>Who We Are</p>
+                <p>What We Belive</p>
+                <p>Mission & Vision</p>
+                <p>Meet Our Pastors</p>
+            </div>
+
+            <!--Prayer Request details-->
+            <div class="footer_details">
+                <h4>PRAYER REQUEST</h4>
+                <p>What Can We Pray for You?</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Script-->
+    <script src="JavaScript.js"></script>
+</body>
+</html>
