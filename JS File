@@ -1,0 +1,14 @@
+/*Opens the menu of mobile version of the website*/
+function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+
+/*Opens the form for the Connect Groups*/
+function openForm() {
+    document.getElementById("popupForm").style.display = "block";
+}
+
+/*Closes the form for the Connect Groups*/
+function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
+}
